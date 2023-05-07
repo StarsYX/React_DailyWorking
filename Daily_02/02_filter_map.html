@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script> 
+
+    <style>
+        .item {
+            border: 1px solid orange;
+            margin: 10px;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="studentInfo"></div>
+    <script type="text/babel">
+
+        class App extends React.Component {
+            constructor() {
+                super()
+
+                this.state = {
+                    ktStudents: [
+                        {name: "鸣人", age: 18, job: "修仙，战斗"},
+                        {name: "路飞", age: 20, job: "当海贼王"},
+                        {name: "悟空", age: 14, job: "超级赛亚人"},
+                        {name: "图图", age: 6, job: "上学"},
+                        {name: "柯南", age: 9, job: "凶案现场"},
+                ]
+                }
+            }
+
+            render() {
+                const {ktStudents} = this.state
+
+                const ktFilterList = ktStudents.filter(item => {
+                    return item.age > 10
+                })
+
+                // 截取前2个人
+                const kt2List = ktFilterList.slice(0, 2)
+
+                return (
+                    <div>
+                        <h2>动漫大乱斗列表</h2>
+                        <div className="list" >
+                            {
+                                // kt2List.map(item => {
+
+                                ktStudents.filter(item => item.age>10).slice(0, 2).map(item => {
+                                //    ktStudents.filter(item => item.age>10).sort(() => function)).map(item => {
+                                    return (
+                                        <div className="item" key={item.name}>
+                                            <h2>姓名: {item.name}</h2>
+                                            <h3>年龄: {item.age}</h3>
+                                            <h1>工作: {item.job}</h1>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
+                )
+            }
+        }
+
+
+    ReactDOM.render(<App />, document.getElementById('studentInfo'))
+
+    </script>
+
+
+</body>
+</html>
