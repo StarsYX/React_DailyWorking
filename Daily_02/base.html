@@ -13,7 +13,8 @@
 <body>
     
     <div id="root"></div>
-    <p id="haha"></p>
+    <p id="name"></p>
+    <p id="age"></p>
 
     <script type="text/babel">
         //1.定义App根组件
@@ -21,14 +22,22 @@
             constructor() {
                 super()
                 this.state = {
-                    message: "Hello World"
+                    name: "第七代目，鸣人",
+                    age: 18,
+                    job: "修仙"
                 }
             }
          
-            btnClick(event) {
+            btnClick_01(event) {
                 console.log("btnClick", event, this)
-               const haha = document.getElementById('haha')
-               haha.innerHTML = this.state.message
+               const nameTag = document.getElementById('name')
+               nameTag.innerHTML = this.state.name
+            }
+
+            btnClick_03(event, name, age, job) {
+               console.log("btnClick_03点击:" + event, "this:" + this, "name:" + name, "age:" + age, `job:${job}`)
+               const ageTag = document.getElementById('age')
+               ageTag.innerHTML = this.state.age
             }
 
             render() {
@@ -37,8 +46,14 @@
                 return (
                     <div>
                         { /* 1. event参数的传递*/ }
-                        <button onClick={ this.btnClick.bind(this) }>按钮</button>
-                    </div>
+                        <button onClick={ this.btnClick_01.bind(this) }>按钮01</button>
+
+                        { /* 这种方式传递的参数，event在函数形参的最后 */ }
+                       { /*  <button onClick={ this.btnClick00.bind(this, "博人", 10) }>按钮</button>  */ }
+                        
+                         { /* 3. 箭头函数（推荐） */ }
+                        <button onClick={(event) => this.btnClick_03(event, "九尾", 100, "鸣人体内睡觉")}>按钮03</button>
+                     </div>
                 )
             }
         }
