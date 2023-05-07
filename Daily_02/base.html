@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script> 
+</head>
+<body>
+    
+    <div id="root"></div>
+    <p id="haha"></p>
+
+    <script type="text/babel">
+        //1.定义App根组件
+        class App extends React.Component {
+            constructor() {
+                super()
+                this.state = {
+                    message: "Hello World"
+                }
+            }
+         
+            btnClick(event) {
+                console.log("btnClick", event, this)
+               const haha = document.getElementById('haha')
+               haha.innerHTML = this.state.message
+            }
+
+            render() {
+                const { message } = this.state
+                
+                return (
+                    <div>
+                        { /* 1. event参数的传递*/ }
+                        <button onClick={ this.btnClick.bind(this) }>按钮</button>
+                    </div>
+                )
+            }
+        }
+
+        //2. 创建root并且渲染App组件(react18)
+        // const root = ReactDOM.createRoot(document.querySelector('#root'))
+        // root.render(<App />)
+        ReactDOM.render(<App />, document.getElementById('root'))
+    </script>
+</body>
+</html>
