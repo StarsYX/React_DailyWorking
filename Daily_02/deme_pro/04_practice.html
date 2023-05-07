@@ -34,7 +34,7 @@
     <script type="text/babel">
         const boosArr = booksList
         console.log("books:" + boosArr)
-        
+
         class App extends React.Component {
             constructor() {
                 super()
@@ -48,6 +48,19 @@
             render() {
                 const { message } = this.state
                 const { books } = this.state
+
+                // 1. 计算总价格的方式
+                let totalPrice = 0
+                // for(let i = 0; i < books.length; i++) {
+                //     const book = books[i]
+                //     totalPrice += book.price * book.count
+                // }
+
+                // 2. 计算总价格方式二，高阶函数
+                totalPrice = books.reduce((preValue, item) => {
+                    return preValue + item.count * item.price
+                }, 0)
+
                 return (
                     <div>
                         <table>
@@ -86,6 +99,7 @@
                             }
                         </tbody>
                         </table>
+                        <h2>总价格: { "¥" + totalPrice }</h2>
                     </div>
                 )
             }
