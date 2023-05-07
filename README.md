@@ -11,4 +11,7 @@ totalPrice = books.reduce((preValue, item) => {
                     return preValue + item.count * item.price
                 }, 0)
 ```
-
+## 3. 浅拷贝...
+```
+[...this.state.books]
+```

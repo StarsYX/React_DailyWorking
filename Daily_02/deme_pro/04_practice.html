@@ -46,24 +46,30 @@
                 }
             }
 
-            render() {
-                const { message } = this.state
+            increment(index) {
+                console.log(`第${index + 1}本书被点击。`);
+                //数组浅拷贝
+                const newBooks = [...this.state.books]
+                newBooks[index].count += 1
+                this.setState({ books: newBooks })
+            }
+
+            decrement(index) {
+                //数组浅拷贝
+                const newBooks = [...this.state.books]
+                newBooks[index].count -= 1
+                this.setState({ books: newBooks })
+            }
+
+            deleteItem(index) {
+                const newBooks = [...this.state.books]
+                newBooks.splice(index, 1)
+                this.setState({ books: newBooks })
+            }
+
+            renderBooksList(totalPrice) {
                 const { books } = this.state
-
-                // 1. 计算总价格的方式
-                let totalPrice = 0
-                // for(let i = 0; i < books.length; i++) {
-                //     const book = books[i]
-                //     totalPrice += book.price * book.count
-                // }
-
-                // 2. 计算总价格方式二，高阶函数
-                totalPrice = books.reduce((preValue, item) => {
-                    return preValue + item.count * item.price
-                }, 0)
-
-                return (
-                    <div>
+                return <div>
                         <table>
                             <thead>
                                 <tr>
@@ -79,18 +85,23 @@
                             {
                                 books.map((item, index) => {
                                     return (
-                                        <tr>
+                                        <tr key={item.id}>
                                            <td>{ index + 1 }</td> 
                                            <td>{ item.name }</td>
                                            <td>{ item.date }</td>
                                            <td>{ formatPrice(item.price) }</td>
                                            <td>
-                                            <button>-</button>
+                                            <button 
+                                                disabled={ item.count <= 1 }
+                                                onClick={ () => this.decrement(index) }
+                                            >
+                                                -
+                                            </button>
                                             { item.count }
-                                            <button>+</button>
+                                            <button onClick={ () => this.increment(index) }>+</button>
                                             </td>
                                             <td>
-                                                <button>删除</button>
+                                                <button onClick={ () => this.deleteItem(index)}>删除</button>
                                             </td>
                                         </tr>
                                     )
@@ -102,7 +113,29 @@
                         </table>
                         <h2>总价格: { formatPrice(totalPrice) }</h2>
                     </div>
-                )
+            }
+
+            renderBooksEmpty() {
+                return <div><h2>暂时没有书籍了，请添加书籍</h2></div>
+            }
+
+            render() {
+                const { message } = this.state
+                const { books } = this.state
+
+                // 1. 计算总价格的方式
+                let totalPrice = 0;
+                // for(let i = 0; i < books.length; i++) {
+                //     const book = books[i]
+                //     totalPrice += book.price * book.count
+                // }
+
+                // 2. 计算总价格方式二，高阶函数
+                totalPrice = books.reduce((preValue, item) => {
+                    return preValue + item.count * item.price
+                }, 0)
+
+                return books.length ? this.renderBooksList(totalPrice) : this.renderBooksEmpty()
             }
         }
 
