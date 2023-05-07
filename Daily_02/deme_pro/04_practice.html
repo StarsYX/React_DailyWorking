@@ -11,6 +11,7 @@
     <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script> 
 
     <script src="./data.js"></script>
+    <script src="./format.js"></script>
 
     <style>
         /* 边框合并 */
@@ -82,7 +83,7 @@
                                            <td>{ index + 1 }</td> 
                                            <td>{ item.name }</td>
                                            <td>{ item.date }</td>
-                                           <td>{ "¥" + item.price }</td>
+                                           <td>{ formatPrice(item.price) }</td>
                                            <td>
                                             <button>-</button>
                                             { item.count }
@@ -99,7 +100,7 @@
                             }
                         </tbody>
                         </table>
-                        <h2>总价格: { "¥" + totalPrice }</h2>
+                        <h2>总价格: { formatPrice(totalPrice) }</h2>
                     </div>
                 )
             }
