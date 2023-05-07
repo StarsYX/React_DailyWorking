@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script> 
+
+</head>
+<body>
+    
+    <div id="isYourName"></div>
+    <script type="text/babel">
+        class App extends React.Component {
+            constructor() {
+                super()
+                this.state = {
+                    name: "u zu ma ki naruto",
+                    isShow: true
+                }
+            }
+
+            changeShow() {
+                this.setState({ isShow: !this.state.isShow })
+            }
+
+            render() {
+                const { name, isShow } = this.state
+                // let showElement = null
+                // if(isShow) {
+                //     showElement = <h2>{name}</h2>
+                // }
+                return (
+                    <div>
+                        <button onClick={() => this.changeShow()}>点我切换</button>    
+                       { /*  {showElement}*/}
+                       { /* 1. */ }
+                       { /*  { isShow && <h2>{name}</h2> }*/ }
+                        {/*2.不会频繁移除*/}
+                        { <h2 style={{display: isShow ? 'block' : 'none'}}>{name}</h2> }
+                      </div>
+                )
+            }
+        }
+        ReactDOM.render(<App />, document.getElementById('isYourName'))
+    </script>
+</body>
+</html>
