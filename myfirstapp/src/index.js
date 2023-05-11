@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+
 import App from './App';
 import logRenderTime from './resumeTime/log_render_time';
 import { TestFragment } from './fragment/testFragMent';
 import AnimateTest from './05_react动画实现/animate_test';
+import Switch_animate from './06_切换动画/switch_animate';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +15,9 @@ root.render(
 
     {/* <TestFragment /> */}
     
-    <AnimateTest />
+    {/* <AnimateTest /> */}
+    <Switch_animate />
+    
   </React.StrictMode>
 );
 

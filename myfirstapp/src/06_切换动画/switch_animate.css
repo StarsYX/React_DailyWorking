@@ -1,0 +1,21 @@
+.isSwitch-enter {
+    transform: translateX(100px);
+    opacity: 0;
+}
+
+.isSwitch-enter-active {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 1s ease;
+}
+
+.isSwitch-exit {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.isSwitch-exit-active {
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: all 1s ease;
+}
