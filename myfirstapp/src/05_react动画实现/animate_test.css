@@ -1,0 +1,19 @@
+/* 进入动画 */
+.testShow-enter {
+    opacity: 0;
+}
+
+.testShow-enter-active {
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+/* 离开动画 */
+.testShow-exit {
+    opacity: 1;
+}
+
+.testShow-exit-active {
+    opacity: 0;
+    transition: opacity 2s ease;
+}

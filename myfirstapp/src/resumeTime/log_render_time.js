@@ -14,7 +14,7 @@ function logRenderTime(OriginComponent) {
         }
 
         render() {
-            return <OriginComponent {...origin}/>
+            return <OriginComponent {...this.props}/>
         }
     }
 }
