@@ -39,16 +39,16 @@
                 const {ktArr, currIndex} = this.state
 
                 const liList =  ktArr.map((item, index) => {
-                                return (
-                                    <li 
-                                        className={ currIndex === index ? 'active': ""}
-                                        key={item}
-                                        onClick={() => this.itemClick(index)}
-                                    >
-                                        {item}
-                                    </li>
-                                )
-                            })
+                    return (
+                        <li 
+                            className={ currIndex === index ? 'active': ""}
+                            key={item}
+                            onClick={() => this.itemClick(index)}
+                        >
+                            {item}
+                        </li>
+                    )
+                })
 
                 return (
                     <div>

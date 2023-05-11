@@ -15,3 +15,11 @@ totalPrice = books.reduce((preValue, item) => {
 ```
 [...this.state.books]
 ```
+
+
+# TypeScript学习
+## 
+![](assets/16835393354999.jpg)
+![](assets/16835394401438.jpg)
+![](assets/16835394845679.jpg)
+![](assets/16835395257630.jpg)
