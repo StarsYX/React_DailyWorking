@@ -1,24 +1,28 @@
 import { PureComponent } from "react";
+import { Route, Routes, Link } from "react-router-dom"
+import Home from "./pages/Home";
+import About from "./pages/about"
 
 class App extends PureComponent {
-  constructor() {
-    super()
-
-    this.state = {
-      name: "七代目，涡旋鸣人"
-    }
-  }
 
   render() {
-    const { name } = this.state
     return (
       <div className="app">
         <div className="header">
-          Header
+          <span>header</span>
+          <div className="nav">
+            <Link to="/home">首页</Link>
+            <Link to="/about">关于</Link>
+          </div>
           <hr />
         </div>
-        <div className="content">
-          内容区域
+        <div className="content"> {
+          // 映射关系： path=> Component
+          <Routes>
+            <Route path="/home"  element={ <Home /> } />
+            <Route path="/about" element={ <About/> } />
+          </Routes>
+        }
         </div>
         <div className="footer">
           <hr />
