@@ -2,11 +2,15 @@ import React, { PureComponent } from 'react'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
 
+//react-redux 3.使用时导入connect
+import { connect } from "react-redux"
+
 export class App extends PureComponent {
   render() {
+    const { counter } = this.props
     return (
       <div>
-        <h2>App Counter: 0</h2>
+        <h2>App Counter: { counter }</h2>
         <div className="pages">
           <Home />
           <Profile />
@@ -16,7 +20,13 @@ export class App extends PureComponent {
   }
 }
 
-export default App
+const mapStateToProps = (state) => ({
+  counter: state.counter.counter
+})
+
+//react-redux 4.使用时导入connect
+export default connect(mapStateToProps)(App)
+// export default App
 
 
 // import { PureComponent } from "react";
