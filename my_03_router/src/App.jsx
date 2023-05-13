@@ -2,6 +2,7 @@ import { PureComponent } from "react";
 import { Route, Routes, Link } from "react-router-dom"
 import Home from "./pages/Home";
 import About from "./pages/about"
+import NotFound from "./pages/NotFound";
 
 class App extends PureComponent {
 
@@ -21,6 +22,7 @@ class App extends PureComponent {
           <Routes>
             <Route path="/home"  element={ <Home /> } />
             <Route path="/about" element={ <About/> } />
+            <Route path="*" element={ <NotFound />} />
           </Routes>
         }
         </div>
