@@ -6,6 +6,7 @@ import NotFound from "./pages/NotFound";
 
 import HomeRecommend from "./pages/HomeRecommend";
 import HomeRanking from "./pages/HomeRanking";
+import HomeSongMenu from "./pages/HomeSongMenu"
 
 class App extends PureComponent {
 
@@ -28,6 +29,7 @@ class App extends PureComponent {
               <Route path="/home" element={<Navigate to="/home/recommend"/> } />
               <Route path="/home/recommend" element={ <HomeRecommend />} />
               <Route path="/home/ranking" element={ <HomeRanking />} />
+              <Route path="/home/songmenu" element={ <HomeSongMenu />} />
             </Route>
             <Route path="/about" element={ <About/> } />
             <Route path="*" element={ <NotFound />} />
