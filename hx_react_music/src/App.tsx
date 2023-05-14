@@ -1,21 +1,17 @@
 import React from 'react'
+import { useRoutes } from "react-router-dom"
+import routes from './router'
+// import Download from './views/download'
+// import Daily_test from './views/daily_test'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     {/* <Daily_test name='hx' age={18}>
+      <div>哈哈哈😂</div>
+      <div>嘿嘿嘿</div>
+     </Daily_test> */}
+     <div className='main'>{ useRoutes(routes)}</div>
     </div>
   )
 }
