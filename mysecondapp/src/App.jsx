@@ -1,9 +1,15 @@
 import React, { PureComponent } from 'react'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
+import { 
+  Modal,
+  Button
+} from "antd"
 
 //react-redux 3.使用时导入connect
 import { connect } from "react-redux"
+
+import DailyTest from "./pages/daily-test/index"
 
 export class App extends PureComponent {
   render() {
@@ -11,10 +17,14 @@ export class App extends PureComponent {
     return (
       <div>
         <h2>App Counter: { counter }</h2>
-        <div className="pages">
+        
+        {/* <div className="pages">
           <Home />
           <Profile />
-        </div>
+        </div> */}
+        <DailyTest>
+          
+        </DailyTest>
       </div>
     )
   }
