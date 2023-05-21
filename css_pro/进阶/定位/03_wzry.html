@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 图片根据视图窗口大小，始终居中 */
+        /*  */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            height: 508px;
+            background-color: #f00;
+            overflow: hidden;
+        }
+
+        .box img {
+            position: relative;
+            /* 图片的一半 */
+            /* left: -960px; */
+
+            /* translate中的百分比是相对于自己 */
+            transform: translate(-50%);
+            /* 向右移动div的一半 */
+            margin-left: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="../imgs/MJRJQsxz.avif" alt="王者荣耀">
+    </div>
+</body>
+</html>
