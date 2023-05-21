@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        .item {
+            width: 140px;
+            margin: 0 auto;
+        }
+
+        .item .top {
+            position: relative;
+            /* background-color: #f00; */
+        }
+
+        .item .top img {
+            /* 将图片下面的多出来的区域去除 */
+            /* vertical-align: top; */
+            /* 或者 */
+            display: block;
+        }
+
+        .item .top .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            right: 0;
+            bottom: 0;
+            /* width: 140px;
+            height: 140px; */
+            /* background-color: rgba(0, 0, 0, .5); */
+            background-image: url(../imgs/sprite_coverall.png);
+            background-position: 0 0;
+        }
+
+        .item .top .info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 27px;
+            line-height: 27px;
+            font-size: 12px;
+
+            /* background-color: rgba(0, 0, 0, .5); */
+            background-image: url(../imgs/sprite_coverall.png);
+            background-position: 0 -537px;
+        }
+
+        .item .top .info .icon-music {
+            position: relative;
+            top: 1px;
+            display: inline-block;
+            width: 14px;
+            height: 11px;
+            background-image: url(../imgs/sprite_iconall.png);
+            background-position: 0 -24px;
+        }
+
+        .item .top .info .count {
+            margin-left: 4px;
+            color: white;
+        }
+
+        .item .bottom {
+            display: block;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        .item .bottom:hover {
+            text-decoration: underline;
+        }
+
+        .item .top .info .icon-play {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 10px;
+            margin: auto 0;
+            display: inline-block;
+            width: 16px;
+            height: 17px;
+            background-image: url(../imgs/sprite_iconall.png);
+            background-position: 0 0;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="item">
+        <div class="top">
+             <img src="../imgs/music_meiqi.jpg" alt="孙美岐">
+             <a class="cover" href="#"></a>
+             <div class="info">
+                <i class="icon-music"></i>
+                <span class="count">62万</span>
+                <i class="icon-play"></i>
+             </div>
+        </div>
+        <a class="bottom" href="#">
+            你需要一首BGM，来撑起你的内心戏!
+        </a>
+    </div>
+</body>
+</html>
