@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 800px;
+            height: 700px;
+            background-color: #f00;
+        }
+        .box {
+            width: 600px;
+            height: 500px;
+            background-color: greenyellow;
+
+            position: relative;
+        }
+        strong {
+            /* 脱离标准流 */
+            position: absolute;
+
+            /* 设置的4个值 */
+            /* 在没有祖先元素定位的情况下，相对于的是视口 */
+            left: 0;
+            bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+   <div class="container">
+    <div class="box">
+        <span>span元素</span>
+        <strong>strong元素</strong>
+        <img src="../imgs/boren.webp" alt="鸣人" width="500px">
+        <div>div元素</div>
+   </div>
+   </div>
+</body>
+</html>
