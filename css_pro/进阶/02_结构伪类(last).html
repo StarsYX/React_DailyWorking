@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 倒数第某一个 */
+        ul > li:nth-last-child(2) {
+            color: green;
+        }
+
+        /* 倒数第后几个 */
+        ul > li:nth-last-child(-n+5) {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>元素列表1</li>
+        <li>元素列表2</li>
+        <li>元素列表3</li>
+        <li>元素列表4</li>
+        <li>元素列表5</li>
+        <li>元素列表6</li>
+        <li>元素列表7</li>
+        <li>元素列表8</li>
+        <li>元素列表9</li>
+    </ul>
+</body>
+</html>

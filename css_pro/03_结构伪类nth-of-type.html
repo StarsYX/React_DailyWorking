@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 选择box中的div元素, 且是第三个子元素 */
+        .box > div:nth-child(3) {
+            color: purple;
+        }
+
+        /* 读取类型是div的第三个元素 */
+        .box > div:nth-of-type(3) {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>测试数据1</div>
+        <p>p元素</p>
+        <div>测试数据1.5</div>
+        <span>我是span元素1</span>
+        <span>我是span元素2</span>
+        <span>我是span元素3</span>
+        <span>我是span元素4</span>
+        <div>测试数据2</div>
+        <div>测试数据3</div>
+        <div>测试数据4</div>
+        <div>测试数据5</div>
+        <div>测试数据6</div>
+        <div>测试数据7</div>
+        <div>测试数据8</div>
+        <div>测试数据9</div>
+        <div>测试数据10</div>
+    </div>
+</body>
+</html>
