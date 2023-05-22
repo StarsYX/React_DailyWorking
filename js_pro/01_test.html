@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 方式一: -->
+    <!-- <a href="#" onclick="alert('弹窗测试')">点我</a> -->
+    <!-- <a href="javascript: alert('我会唱歌')">唱歌</a> -->
+
+    <!-- 方式二: -->
+    <a class="clickme" href="#">点我呀，我会弹窗</a>
+
+    <script>
+        var clickmetag = document.querySelector(".clickme")
+        clickmetag.onclick = function() {
+            alert("我真的会唱歌.")
+        }
+    </script>
+
+<!-- 方式三： -->
+    <!-- <a class="testTag" href="#">点夸我</a>
+    <script src="./test.js">
+
+    </script> -->
+</body>
+</html>
