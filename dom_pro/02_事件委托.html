@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .active {
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+    </ul>
+
+    <script>
+        // var liEl = document.querySelectorAll("li");
+        // for (var subli of liEl) {
+        //     subli.onclick = function(event) {
+        //         console.log("----点击 ");
+        //         event.currentTarget.classList.add("active");
+        //     }
+        // }
+
+
+        // var ulEl = document.querySelector("ul");
+        // ulEl.onclick = function(event) {
+        //     console.log("----event target:", event.target);
+        //     event.target.classList.add("active");
+        // }
+
+        var ulEl = document.querySelector("ul");
+        ulEl.onclick = function(event) {
+            for(var i =0; i < ulEl.children.length; i++) {
+                var liEl = ulEl.children[i];
+                if(event.target !== ulEl && liEl.classList.contains("active")) {
+                    liEl.classList.remove("active");
+                }
+            }
+            if(event.target !== ulEl) {
+                event.target.classList.add("active");
+            }
+        }
+
+
+    </script>
+</body>
+</html>

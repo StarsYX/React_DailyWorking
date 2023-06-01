@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 600px;
+            height: 5000px;
+            
+        }
+        .btn {
+            position: fixed;
+            width: 80px;
+            height: 40px;
+            background-color: red;
+            right: 20px;
+            bottom: 50px;
+            /* display: none; */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+    <button class="btn"></button>
+
+     
+    
+    <script>
+        var dom = document.querySelector(".box")
+        var btnEl = document.querySelector(".btn")
+        btnEl.hidden = true;
+        window.onscroll = function(){
+            
+            var scrolly = window.scrollY;
+            console.log("---滚动个了",scrolly);
+            if(scrolly > 600) {
+                btnEl.hidden = false;
+            }else {
+                btnEl.hidden = true;
+            }
+            // window.scrollBy(0, index * 300)
+        }
+        // var index = 0;
+       
+        // btnEl.onclick = function() {
+        //     ++index;
+           
+        // }
+        // dom.classList.add("active");
+        // dom.textContent = "我是大魔王，哈哈哈，快投降吧小妖精"
+        // console.log("00--dom:",dom);
+
+        // var h3el = document.createElement("h3");
+        // h3el.className = "h3name";
+        // h3el.classList.add("id=qwe");
+        // h3el.textContent = "e呃呃的的地方";
+
+        // dom.append(h3el);
+
+
+        
+    </script>
+</body>
+</html>
