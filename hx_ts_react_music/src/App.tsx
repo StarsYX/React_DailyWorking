@@ -2,10 +2,12 @@ import React from 'react';
 import { useRoutes } from 'react-router-dom';
 import routes from './router';
 
+import DownLoad from './views/download';
+
 function App() {
   return (
     <div className="App">
-      { useRoutes(routes) }
+      <div className='main'>{ useRoutes(routes) }</div>
     </div>
   );
 }
