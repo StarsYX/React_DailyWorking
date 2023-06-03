@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useRoutes, Link } from 'react-router-dom';
 import routes from './router';
-
-import DownLoad from './views/download';
 
 function App() {
   return (
@@ -13,7 +11,10 @@ function App() {
         <Link to="/focus">关注</Link>
         <Link to="/download">下载客户端</Link>
       </div>
-      <div className='main'>{ useRoutes(routes) }</div>
+      {/* 分包时，未下载下来前提示 */}
+      <Suspense fallback="loading...">
+        <div className='main'>{ useRoutes(routes) }</div>
+      </Suspense>
     </div>
   );
 }
