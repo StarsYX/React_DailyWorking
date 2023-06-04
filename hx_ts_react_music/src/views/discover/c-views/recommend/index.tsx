@@ -4,6 +4,7 @@ import type { FC, ReactNode } from "react";
 import hyRequest from "@/service/index";
 import { useAppDispatch } from "@/store";
 import { fetchBannerDataAction } from "./store/recommend";
+import TopBanner from "./c-cpns/top-banner";
 
 interface IProps {
   children?: ReactNode;
@@ -42,15 +43,10 @@ const Recommend: FC<IProps> = () => {
   // }
 
   return (
-    <div> 
-      {
-        banners.map((item, index) => {
-          return (
-            <div key={index}> recommend </div>
-            // <div key={index}> { item.imageUrl}</div>
-          )
-        })
-      }
+    <div>
+      <TopBanner />
+      
+      recommend 
     </div>
   )
 }
