@@ -2,6 +2,8 @@ import React, { memo, useEffect, useState } from "react";
 import type { FC, ReactNode } from "react";
 
 import hyRequest from "@/service/index";
+import { useAppDispatch } from "@/store";
+import { fetchBannerDataAction } from "./store/recommend";
 
 interface IProps {
   children?: ReactNode;
@@ -21,27 +23,31 @@ export interface IBannerData {
 
 const Recommend: FC<IProps> = () => {
   const [banners, setBanners] = useState<IBannerData[]>([])
+// 发起action获取数据
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    getData()
+    // getData()
+    dispatch(fetchBannerDataAction());
   }, [])
 
 
-  const getData = () => {
-    hyRequest.get({
-      url: "/banner",
-    }).then((res: any) => {
-      setBanners(res.banners || []);
-      console.log("--res:",res);
-    })
-  }
+  // const getData = () => {
+  //   hyRequest.get({
+  //     url: "/banner",
+  //   }).then((res: any) => {
+  //     setBanners(res.banners || []);
+  //     console.log("--res:",res);
+  //   })
+  // }
 
   return (
     <div> 
       {
         banners.map((item, index) => {
           return (
-            <div key={index}> { item.imageUrl}</div>
+            <div key={index}> recommend </div>
+            // <div key={index}> { item.imageUrl}</div>
           )
         })
       }
