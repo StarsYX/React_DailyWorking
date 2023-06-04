@@ -18,11 +18,11 @@ const root = ReactDOM.createRoot(
 root.render(
   // redux相关： 3.使用Provider,通过store即可拿到store
   <Provider store={ store }>
-    <ThemeProvider theme={theme}>
+    {/* <ThemeProvider theme={theme}> */}
       <HashRouter>
         <App />
       </HashRouter>
-    </ThemeProvider>
+    {/* </ThemeProvider> */}
   </Provider>
 
 );
