@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../../lib/jquery-3.7.0.js"></script>
+</head>
+<body>
+    
+    <ul 
+        id="list"
+        class="panel"
+        name="haha"
+        age="18"
+    >
+        <li class="li-1">li-1</li>
+        <li class="li-2">li-2</li>
+        <li class="li-3">li-3</li>
+        <li class="li-4">li-4</li>
+        <li class="li-5">li-5</li>
+    </ul>
+
+    <input type="text">
+
+    <script>
+        $(function() {
+            // 获取attribute属性 ul
+            // console.log("%O", document.querySelector('ul'));
+           
+            // console.log($('ul').prop('nodeName')  );
+            // console.log( $('ul').prop('id') );
+
+            //2.设置property属性 input
+            // $('input').prop('disabled', true)
+
+            // $('input').prop({
+            //     'disabled': true,
+            //     placeholder: "请输入姓名"
+            // })
+
+            //3.删除prop属性(只能删除自定义的属性)
+            $('input').removeProp('')
+        })
+    </script>
+
+</body>
+</html>

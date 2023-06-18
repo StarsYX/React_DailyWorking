@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../lib/jquery-3.7.0.js"></script>
+</head>
+<body>
+   
+    <ul 
+    id="list"
+    >
+    <li class="li-1">li-1</li>
+    <li class="li-2">li-2</li>
+    <li class="li-3">li-3</li>
+    <li class="li-4">li-4</li>
+    <li class="li-5">li-5</li>
+    <li class="li-6">
+        li-6
+        <p>我是p元素呀</p>
+    </li>
+    </ul>
+
+    <script>
+
+       $(function() {
+
+          $('ul').on('click', function(event) {
+            console.log(event.target);
+          })
+
+          //on的第二个参数是select，筛选可以触发事件的元素，只能li 下p可以触发
+          $('ul').on('click', 'li p', function(event) {
+             console.log(event.target);
+          })
+
+       })
+
+    </script>
+</body>
+</html>

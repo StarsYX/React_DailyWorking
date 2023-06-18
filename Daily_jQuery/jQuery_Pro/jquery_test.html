@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/jquery-3.7.0.js"></script>
+</head>
+<body>
+
+    <p>如果你点我，我就会消失。</p>
+    <p>点我消失!</p>
+    <p>点我也消失!</p>
+    <button>click</button>
+    
+    <script>
+        $(document).ready(function() {
+            $("p").click(function() {
+                $(this).hide();
+            });
+        });
+        // $(document).ready(function(){
+        //     $("button").click(function() {
+        //         $(this).hide();
+        //     });
+        // });
+
+        
+        // type CalcReturnType = ReturnType<
+
+        // $(document).ready(function(){
+        //     $("button").click(function() {
+        //         $(".test").hide();
+        //     });
+        // });
+    </script>
+</body>
+</html>

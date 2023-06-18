@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../lib/jquery-3.7.0.js"></script>
+
+    <style>
+        .box {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <button class="start">动画开始</button>
+    <button class="stop">暂停动画</button>
+    <button class="queue">查看动画队列</button>
+    
+    <div class="box">box</div>
+
+    <script>
+        $(function(){
+            let box = $('.box')
+
+            $('.start').click(function() {
+                box.animate({
+                    top: 100
+                }, 500)
+
+                box.animate({
+                    left: 100
+                }, 500)
+
+                box.animate({
+                    top: 0
+                }, 500)
+
+                box.animate({
+                    left: 0
+                }, 500)
+            })
+
+            $('.queue').click(function() {
+                console.log( $('.box').queue());
+            })
+
+            $('.stop').click(function() {
+                // 停止当前动画，执行动画队列中别的动画
+                console.log( $('.box').stop());
+
+                // 停止所有的动画
+                box.stop(true)
+            })
+        })
+    </script>
+</body>
+</html>

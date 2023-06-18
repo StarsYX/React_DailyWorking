@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../../lib/jquery-3.7.0.js"></script>
+</head>
+<body>
+    <ul 
+    id="list"
+    >
+    <li class="li-1">li-1</li>
+    <li class="li-2">li-2</li>
+    <li class="li-3">li-3</li>
+    <li class="li-4">li-4</li>
+    <li class="li-5">li-5</li>
+</ul>
+
+<!-- <li class="li-6">hhh</li> -->
+
+<script>
+    $(function() {
+        //模版字符串
+        // $('ul').append(`
+        //     <li>我是li元素</li>
+        // `)
+
+        // $('ul').append(`
+        //     <li>我是li元素</li>
+        //     <li>我是li元素2</li>
+        // `,  `<li>我是哈哈元素</li>`)
+
+        //方式3 插入jquery对象
+        // let liEl = $('<li>').addClass('li-6').text("我是li-6内容")
+        // $('ul').append(liEl)
+
+        let li_7El = document.createElement("li")
+        li_7El.className = 'li-7'
+        li_7El.innerText = '我是li-7内容'
+        $('ul').append(li_7El)
+
+        // 方式5.将选中的页面上的元素插入ul中
+        // $('ul').append$('.li-6')
+    })
+</script>
+
+
+</body>
+</html>

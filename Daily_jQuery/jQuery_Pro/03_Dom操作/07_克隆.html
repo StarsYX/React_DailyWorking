@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../../lib/jquery-3.7.0.js"></script>
+</head>
+<body>
+    <ul 
+    id="list"
+    >
+    <li class="li-1">li-1</li>
+    <li class="li-2">li-2</li>
+    <li class="li-3">li-3</li>
+    <li class="li-4">li-4</li>
+    <li class="li-5">li-5</li>
+</ul>
+
+<li class="li-6">li-6</li>
+
+<script>
+    $(function() {
+      $('ul')
+      .css('background', 'red')
+
+      //将li-6克隆到ul里
+    //   let newElli = $('.li-6').clone()
+    //   newElli.appendTo('ul')
+
+    //将li-6克隆到ul的尾部(将li-6的事件处理函数以及data自定义属性一同拷贝过去）
+    $('.li-6')
+        .data({
+            name:"章三",
+            age: '17'
+        })
+        .click(function() {
+            console.log("--li-6--");
+        })
+        //开始克隆
+        .clone(true)
+        .appendTo('ul')
+
+        console.log("%O", $('.li-6').get(0));
+      
+    })
+</script>
+
+
+</body>
+</html>

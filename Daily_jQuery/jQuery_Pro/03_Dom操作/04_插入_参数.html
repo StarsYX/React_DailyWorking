@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../../lib/jquery-3.7.0.js"></script>
+</head>
+<body>
+    <ul 
+    id="list"
+    >
+    <li class="li-1">li-1</li>
+    <li class="li-2">li-2</li>
+    <li class="li-3">li-3</li>
+    <li class="li-4">li-4</li>
+    <li class="li-5">li-5</li>
+</ul>
+
+<li class="li-7">li-77</li>
+
+<script>
+    $(function() {
+        // 在ul的尾部插入内容
+        $('<li>')
+            .addClass('li-6')
+            .text('我是li-6') //创建一个li-6元素
+
+            //方式1: 支持jQuery对象
+            // .appendTo($('ul'))
+        
+            //方式2:支持字符串类型的选择器
+            // .appendTo('ul')
+
+             //方式3:支持元素对象
+            .appendTo( document.querySelector('ul'))
+
+            $('.li-7').appendTo('ul')
+    })
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../../lib/jquery-3.7.0.js"></script>
+</head>
+<body>
+    <button class="sub">-</button>
+    <span class="counter">0</span>
+    <button class="add">+</button>
+
+    <script>
+
+        // jquery可以监听选择器也可以监听函数，
+        //监听函数就是监听文档解析完成
+        $(function() {
+            let spanEl = $('.counter')
+
+            let counter = 0
+            $('.sub').on('click', function(){
+                spanEl.text(--counter)
+            })
+            $('.add').on('click', function(){
+                spanEl.text(++counter)
+            })
+        })
+        
+
+    </script>
+</body>
+</html>

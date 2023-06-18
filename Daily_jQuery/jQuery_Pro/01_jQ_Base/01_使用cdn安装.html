@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- integrity:防止cdn上的资源被篡改，被篡改的话就不会加载资源 -->
+    <!-- 使用cdn的方式引入
+    执行下面的js文件
+    1.会给window对象增加一个jQuery函数。
+    2.给window对象增加一个“$”函数。
+    这2个函数都是工厂函数
+    -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+    <script>
+        // console.log("jQuery:", jQuery);
+        // console.log("jQuery:%O", jQuery);
+        // console.log("$与jQuery是否相等:", $ === jQuery);
+
+        // 在页面上显示用户1个文本
+        document.querySelector('body').textContent = "jQuery学习开始"
+
+        // jQuery("body").text("jQuery方法显示内容")
+        $("body").text("哈哈哈")
+    </script>
+</body>
+</html>

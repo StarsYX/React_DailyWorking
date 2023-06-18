@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../lib/jquery-3.7.0.js"></script>
+</head>
+<body>
+   
+    <ul 
+    id="list"
+    >
+    <li class="li-1">li-1</li>
+    <li class="li-2">li-2</li>
+    <li class="li-3">li-3</li>
+    <li class="li-4">li-4</li>
+    <li class="li-5">li-5</li>
+</ul>
+
+    <button class="cancel"> 取消按钮点击事件</button>
+
+    <script>
+        $('ul').css('background', 'orange')
+
+        $('ul').on('click', function() {
+            console.log("--点击了--11--");
+        })
+
+        $('ul').click(function() {
+            console.log("--点击了--22--");
+        })
+
+        $('ul').mouseenter(function() {
+            console.log("---鼠标移动了");
+        })
+
+        $('.cancel').click(function() {
+            //取消ul上所有事件
+            // $('ul').off()
+
+            $('ul').off('mouseenter')
+        })
+
+        // 使用程序自动触发事件
+        $('ul').trigger('click') //模拟用户点击了ul元素
+
+        $('ul').trigger('mouseenter')
+
+    </script>
+</body>
+</html>

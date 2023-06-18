@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../lib/jquery-3.7.0.js"></script>
+
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    
+    <button class="hide">隐藏</button>
+    <button class="show">显示</button>
+    <button class="toggle">切换</button>
+
+    <div class="box">
+        box
+    </div>
+
+    <script>
+        $(function() {
+            $('.hide').click(function() {
+                $('.box').animate({
+                    height: 0, //字符串/number/百分比
+                    width:0,
+                    opacity: 0
+                }, 2000, 'swing', function() {
+                    console.log("动画执行完毕之后回调");
+                })
+            })
+
+            $('.show').click(function() {
+                $('.box').animate({
+                    height: 100,
+                    width: 200,
+                    opacity: 1
+                }, 2000, 'swing', function() {
+                    console.log("动画执行完毕之后回调");
+                })
+            })
+
+            $('.toggle').click(function() {
+                $('.box').animate({
+                    height: 'toggle',
+                    width: 'toggle',
+                    opacity: 'toggle'
+                }, 2000, 'swing', function() {
+                    console.log("动画执行完毕之后回调");
+                })
+            })
+        })
+    </script>
+</body>
+</html>

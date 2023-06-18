@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../lib/jquery-3.7.0.js"></script>
+</head>
+<body>
+    
+    <ul>
+        <li class="li-1">li-1</li>
+        <!-- <li id="li-2">li-2</li> -->
+        <li class="li-2">li-2</li>
+        <li class="li-3">li-3</li>
+        <li class="li-4">li-4</li>
+        <li class="li-5">li-5</li>
+        <li>
+            <div>
+                我是div
+                <span>我是span</span>
+            </div>
+        </li>
+    </ul>
+
+
+    <script>
+        $(function() {
+            // 拿到ul中所有文本
+            // console.log($('ul').text());
+
+            // // 设置li中的文本
+            // $('ul li').text("我是文本")
+
+            // //获取ul元素中的所有html内容
+            // console.log( $('ul li').html() );
+
+            $('ul li').html(`
+                <p>我是p元素</p>
+                <span>我是一个span元素</span>
+            `)
+        })
+    </script>
+</body>
+</html>
