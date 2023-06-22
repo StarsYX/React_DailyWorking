@@ -37,21 +37,30 @@
         //  })
 
         //3. 添加请求头
-        $.ajax({
-            url: 'https://httpbin.org/get',
-            method: 'get',
-            data: {
-                cityId: 123,
-                keyWord: 'lilei'
-            },
-            headers: {
-                accessToken: 'aabbccdd',
-            },
-            success: function(res) {
-                console.log("res:",res);
-            }
+        // $.ajax({
+        //     url: 'https://httpbin.org/get',
+        //     method: 'get',
+        //     data: {
+        //         cityId: 123,
+        //         keyWord: 'lilei'
+        //     },
+        //     headers: {
+        //         accessToken: 'aabbccdd',
+        //     },
+        //     success: function(res) {
+        //         console.log("res:",res);
+        //     }
+        // })
 
-        })
+        //4.get请求简写 jquery1.8之后支持
+        $.get('https://httpbin.org/get')
+         .then(function() {
+
+         }).catch(function() {
+
+         }).always(function() {
+            
+         })
     </script>
 </body>
 </html>
