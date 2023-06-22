@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../lib/jquery-3.7.0.js"></script>
+</head>
+<body>
+    
+    <script>
+        //编码
+        //encodeURIComponent('故宫颐和园')
+        //1.
+        // data:会自动解析，添加到url后面
+        // $.ajax({
+        //     url: 'https://httpbin.org/get',
+        //     data: {
+        //         cityid: 123,
+        //         keyword: '哈哈'
+        //     },
+        //     success: function(res) {
+        //         console.log("请求成功：",res);
+        //     }
+        // })
+
+        //2.
+        // $.get('https://httpbin.org/get')
+        //  .then(function(res) {
+        //     console.log("then",res);
+        //  })
+        //  .catch(function() {
+        //     console.log("catch");
+        //  })
+        //  .always(function() {
+        //     console.log("always");
+        //  })
+
+        //3. 添加请求头
+        $.ajax({
+            url: 'https://httpbin.org/get',
+            method: 'get',
+            data: {
+                cityId: 123,
+                keyWord: 'lilei'
+            },
+            headers: {
+                accessToken: 'aabbccdd',
+            },
+            success: function(res) {
+                console.log("res:",res);
+            }
+
+        })
+    </script>
+</body>
+</html>

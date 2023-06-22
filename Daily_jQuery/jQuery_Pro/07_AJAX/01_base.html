@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../../lib/jquery-3.7.0.js"></script>
+</head>
+<body>
+    
+    <script>
+        $(function() {
+            //1.get
+            // $.ajax({
+            //    url: 'https://httpbin.org/get',
+            // //    method: 'GET' 
+            //    type: 'GET',
+            //    dataType: 'json', //期望服务器返回的数据类型
+            //    success: function(res) {
+            //     console.log("---请求结果");
+            //    },
+            //    error: function(err) {
+            //     console.log("error:", err);
+            //    }
+            // })
+
+            //2.post请求
+            // $.ajax({
+            //     url: "https://httpbin.org/post",
+            //     type: 'POST',
+            //     success: function(res) {
+            //         console.log("--success:",res);
+            //     },
+            //     error: function(err) {
+            //         console.log("err:",err);
+            //     }
+            // })
+
+            //3.put请求
+            $.ajax({
+                url:"https://httpbin.org/put",
+                type: 'put',
+                success: function(res) {
+                    console.log("--success:",res);
+                },
+                error: function(err) {
+                    console.log("err:",err);
+                }
+            })
+        })
+    </script>
+</body>
+</html>

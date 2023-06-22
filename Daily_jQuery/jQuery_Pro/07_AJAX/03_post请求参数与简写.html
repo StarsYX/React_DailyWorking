@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../lib/jquery-3.7.0.js"></script>
+</head>
+<body>
+    
+    <script>
+        $(function() {
+            //1.ulr中提交查询字符串
+            //post请求地址后也可以像get请求一样后面拼接参数(用的少)
+            // $.ajax({
+            //     url: 'http://httpbin.org/post',
+            //     method: 'post',
+            //     success: function(res) {
+            //         console.log("---请求成功:",res);
+            //     }
+            // })
+
+            //2.data中提交查询字符串
+            // $.ajax({
+            //     url: 'http://httpbin.org/post',
+            //     method: 'post',
+            //     data: {
+            //         cityId: 123,
+            //         keyWord: 'haha'
+            //     },
+            //     // contentType:'xxx',jquery里添加的有默认的，也可以写
+            //     // dataType:'json', //会根据请求的content-type自动推断
+            //     success: function(res) {
+            //         console.log("---请求成功:",res);
+            //     }
+            // })
+            
+            
+            //3.data中json字符串
+            // $.ajax({
+            //     url: 'http://httpbin.org/post',
+            //     method: 'post',
+            //     data: JSON.stringify({
+            //         cityId: 123,
+            //         keyWord: 'haha'
+            //     }),
+            //     contentType: 'application/json, charset=UTF-8', //当为json字符串时，要添加contenttype告诉后台传的什么类型
+            //     success: function(res) {
+            //         console.log("---请求成功:",res);
+            //     }
+            // })
+
+            //4.data中formdata（egg：input，元素）
+            //
+            // var formData = new FormData()
+            // formData.append('name', "张三"),
+            // formData.append('age', 18),
+            // formData.append('cityId', 101),
+            // $.ajax({
+            //     url: 'http://httpbin.org/post',
+            //     method: 'post',
+            //     data: formData,
+            //     processData:false, //processData:true 会将data为对象的转成查询字符串
+            //     contentType: false, //使用原生xhr默认的contenttype
+            //     success: function(res) {
+            //         console.log("---请求成功:",res);
+            //     }
+            // })
+
+            //5.添加请求头
+            $.get('https://httpbin.org/get', {
+                cityId: 123,
+                keyWord: 'haha'
+            })
+            .then(function() {
+
+            }).catch(function() {
+
+            }).always(function() {
+                
+            })
+
+                //6.post简写
+
+            })
+    </script>
+</body>
+</html>
